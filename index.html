@@ -57,7 +57,7 @@
         body{font-size:var(--ff-base-size);line-height:var(--ff-base-line-height);letter-spacing:var(--ff-letter-spacing);background-color:#e2e6e8;margin:0;padding:0}
         .navbar,nav{background-color:#fff}
         html.pg-loaded body{font-family:var(--ff-base)}
-        @media screen and (min-width:800px){.lp-layout{display:grid;grid-template-columns:78% 22%;grid-template-areas:"nav sidebar" "banner sidebar" "main ." "footer ."}.navbar{position:sticky;top:0;z-index:15}}
+        .navbar{position:sticky;top:0;z-index:1050;} @media screen and (min-width:800px){.lp-layout{display:grid;grid-template-columns:78% 22%;grid-template-areas:"nav sidebar" "banner sidebar" "main ." "footer ."}}
         @media screen and (min-width:1150px){.lp-layout{grid-template-columns:82% 18%}}
         nav{grid-area:nav;height:var(--nav-height);overflow:hidden;transition:.3s;z-index:1050}
         .main-navbar .navbar-nav{width:100%;align-items:center;justify-content:space-around;gap:10px}

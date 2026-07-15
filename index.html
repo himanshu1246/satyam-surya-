@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Satyam Surya Manhattan | Premium Residential & Commercial Landmark in Kharghar</title>
+  
+  <meta name="description" content="Satyam Surya Manhattan: A Premium Residential & Commercial Landmark in Kharghar, Navi Mumbai. CC & RERA Approved (P52000079306)." />
+  <meta name="keywords" content="Satyam Surya Manhattan, Kharghar, Navi Mumbai, Real Estate, 2 BHK, 3 BHK, Shops, Commercial, Residential" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Satyam Surya Manhattan | Kharghar, Navi Mumbai" />
+  <meta property="og:description" content="A Premium Residential & Commercial Landmark near Amandoot Metro Station. 2 & 3 BHK Premium Residences." />
+  <meta property="og:image" content="./assets/horizontal building image.jpeg" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Satyam Surya Manhattan | Kharghar" />
+  <meta name="twitter:description" content="A Premium Residential & Commercial Landmark near Amandoot Metro Station. 2 & 3 BHK Premium Residences." />
+  <meta name="twitter:image" content="./assets/horizontal building image.jpeg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+  
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/png" href="./assets/logo.png" />
+</head>
+<body>
+  <!-- 1. Sticky Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="./assets/logo.png" alt="Satyam Surya Manhattan Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'60\'><rect width=\'150\' height=\'60\' fill=\'%23ccc\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-family=\'sans-serif\' font-size=\'14\'>LOGO</text></svg>'">
+      </a>
+      
+      <button class="mobile-menu-btn">☰</button>
+      
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#siteplan">Site Plan</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#home" class="open-enquiry-modal">Brochure</a>
+        <a href="tel:919876543210" class="btn-cta">📞 +91 98765 43210</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section class="hero" id="home">
+    <img src="./assets/horizontal building image.jpeg" alt="Satyam Surya Manhattan Building" class="hero-bg parallax-layer" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'1000\' height=\'800\'><rect width=\'1000\' height=\'800\' fill=\'%23ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'24\'>Hero Image Placeholder</text></svg>'">
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal-3d">
+      <div class="tagline">A Premium Residential & Commercial Landmark</div>
+      <h1>Satyam Surya Manhattan</h1>
+      <div class="developer">By Shreeji Group</div>
+      
+      <table class="project-details-table">
+        <tr>
+          <th>Project Type</th>
+          <td>Residential & Commercial</td>
+        </tr>
+        <tr>
+          <th>Elevation</th>
+          <td>G + 37 Storey Tower (2 Wings)</td>
+        </tr>
+        <tr>
+          <th>Plot Details</th>
+          <td>Clear Title CIDCO Tender Plot, 1.25 Acres</td>
+        </tr>
+      </table>
+
+      <ul class="hero-highlights">
+        <li>100m Walkable from Amandoot Metro Station</li>
+        <li>8 High-Speed Elevators</li>
+        <li>Vastu-Compliant Residences</li>
+      </ul>
+
+      <div class="starting-price">Premium 2 & 3 BHK Starting at Price on Request</div>
+      
+      <div class="hero-actions">
+        <button class="btn-cta open-enquiry-modal">Enquire Now</button>
+        <a href="tel:919876543210" class="btn-cta">Organize Site Visit</a>
+      </div>
+
+      <div class="hero-rera">
+        MahaRERA Reg. No.- <strong>P52000079306</strong><br>
+        <a href="https://maharera.mahaonline.gov.in" target="_blank" style="color:#666; text-decoration:underline;">maharera.mahaonline.gov.in</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Slide-in / Floating Enquiry Form Modal -->
+  <div class="modal-overlay" id="enquiry-modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3 style="text-align: center; margin-bottom: 20px; color: var(--clr-p);">Request Call Back</h3>
+      <form class="enquiry-form">
+        <input type="hidden" name="hp_field" value=""> <!-- Honeypot -->
+        
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter 10 digit mobile number" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" name="consent" id="consent" required checked>
+          <label for="consent">I authorize Satyam Surya Manhattan and its representatives to contact me with updates and notifications via Call/SMS/WhatsApp.</label>
+        </div>
+        <button type="submit" class="btn-cta" style="width: 100%;">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. About the Project -->
+  <section class="about-section section-padding" id="about">
+    <div class="container">
+      <div class="about-grid reveal-3d">
+        <div class="about-text">
+          <h2 class="section-title" style="text-align: left;">About The Project</h2>
+          <p>Satyam Surya Manhattan is a premium residential and commercial landmark situated in the heart of Kharghar, Navi Mumbai. Located just a 100-meter walk from the Amandoot Metro Station, this majestic G+37 storey twin-tower project offers breathtaking open views and smart, spacious layouts.</p>
+          <p>Designed for modern lifestyles, it features a grand entrance lobby, over 1.25 acres of clear title CIDCO tender plot, and world-class amenities. Experience unparalleled connectivity and luxury living at its finest.</p>
+          <button class="btn-cta open-enquiry-modal">Request Brochure</button>
+        </div>
+        <div class="about-images">
+          <img src="./assets/living room gallery.jpeg" alt="Lifestyle Image 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'400\'><rect width=\'300\' height=\'400\' fill=\'%23eee\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\'>Photo 1</text></svg>'">
+          <img src="./assets/balcony view gallery.jpeg" alt="Lifestyle Image 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'400\'><rect width=\'300\' height=\'400\' fill=\'%23ddd\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\'>Photo 2</text></svg>'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Highlights Checklist -->
+  <section class="highlights-section section-padding" id="highlights">
+    <div class="container">
+      <h2 class="section-title reveal-3d">Project Highlights</h2>
+      <div class="highlights-grid reveal-3d">
+        <div class="highlight-card"><span class="highlight-icon">✓</span> Clear Title CIDCO Tender Plot</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> 1.25 Acres Land Parcel</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> CC & RERA Approved</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> G + 37 Storey Tower (2 Wings)</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> Residential & Commercial Project</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> Grand Entrance Lobby</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> 2 Entry & Exit Points</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> 8 High-Speed Elevators</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> 24×7 CCTV Security</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> 100% Covered Stilt Parking</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> Vastu-Compliant Residences</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> Video Door Phone Facility</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> Breathtaking Open Views</div>
+        <div class="highlight-card"><span class="highlight-icon">✓</span> Smart & Spacious Layouts</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Pricing / Configurations -->
+  <section class="pricing-section section-padding" id="pricing">
+    <div class="container">
+      <h2 class="section-title reveal-3d">Pricing & Configurations</h2>
+      <div class="pricing-grid reveal-3d">
+        <div class="pricing-card">
+          <h3>Shops</h3>
+          <p>Premium Commercial Spaces</p>
+          <div style="font-size: 1.5rem; font-weight: bold; margin: 15px 0;">Price on Request</div>
+          <button class="btn-cta open-enquiry-modal">Complete Costing Details</button>
+        </div>
+        <div class="pricing-card">
+          <h3>2 BHK</h3>
+          <p>Premium Residences</p>
+          <div style="font-size: 1.5rem; font-weight: bold; margin: 15px 0;">Price on Request</div>
+          <button class="btn-cta open-enquiry-modal">Complete Costing Details</button>
+        </div>
+        <div class="pricing-card">
+          <h3>3 BHK</h3>
+          <p>Premium Residences</p>
+          <div style="font-size: 1.5rem; font-weight: bold; margin: 15px 0;">Price on Request</div>
+          <button class="btn-cta open-enquiry-modal">Complete Costing Details</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 7. Plans -->
+  <section class="section-padding" id="siteplan" style="background: var(--bg-color);">
+    <div class="container reveal-3d">
+      <h2 class="section-title">Floor Plans & Layouts</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-slide plan-slide">
+            <img src="./assets/ground floor plan .png" alt="Ground Floor Plan" class="expandable-image" loading="lazy">
+            <div class="plan-caption">Ground Floor Plan</div>
+          </div>
+          <div class="carousel-slide plan-slide">
+            <img src="./assets/1st to 5th floor plan .png" alt="1st to 5th Floor Plan" class="expandable-image" loading="lazy">
+            <div class="plan-caption">1st to 5th Floor Plan</div>
+          </div>
+          <div class="carousel-slide plan-slide">
+            <img src="./assets/6th floor plan .png" alt="6th Floor Plan" class="expandable-image" loading="lazy">
+            <div class="plan-caption">6th Floor Plan</div>
+          </div>
+          <div class="carousel-slide plan-slide">
+            <img src="./assets/typical floor plan .png" alt="Typical Floor Plan" class="expandable-image" loading="lazy">
+            <div class="plan-caption">Typical Floor Plan</div>
+          </div>
+          <div class="carousel-slide plan-slide">
+            <img src="./assets/wing a typical floor plan .png" alt="Wing A Typical Floor Plan" class="expandable-image" loading="lazy">
+            <div class="plan-caption">Wing A Typical Floor Plan</div>
+          </div>
+          <div class="carousel-slide plan-slide">
+            <img src="./assets/wing b typical floor plan .png" alt="Wing B Typical Floor Plan" class="expandable-image" loading="lazy">
+            <div class="plan-caption">Wing B Typical Floor Plan</div>
+          </div>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+    <!-- 8. Amenities Carousel -->
+  <section class="amenities-section section-padding" id="amenities">
+    <div class="container reveal-3d">
+      <h2 class="section-title">Lifestyle Amenities</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/swimming pool amenities.jpeg" alt="Swimming Pool" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Swimming Pool</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/gym amenities.jpeg" alt="Fully Equipped Gym" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Fully Equipped Gym</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/yoga pavilion amenities.jpeg" alt="Yoga Pavilion" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Yoga Pavilion</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/jogging track amenities.jpeg" alt="Jogging Track" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Jogging Track</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/kid's play area aminities.jpeg" alt="Kids' Play Area" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Kids' Play Area</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/landscape garden aminities.jpeg" alt="Landscaped Garden" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Landscaped Garden</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/library aminities.jpeg" alt="Library" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Library</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/indoor games area aminities.jpeg" alt="Indoor Games Area" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Indoor Games Area</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/multi purpose court aminities.jpeg" alt="Multi-Purpose Court" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Multi-Purpose Court</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/meditation area aminities.jpeg" alt="Meditation Hall" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Meditation Hall</div>
+          </div>
+          <div class="carousel-slide amenity-slide">
+            <img src="./assets/senior citizen sit out area aminities.jpeg" alt="Senior Citizen Sit-Out" loading="lazy" class="expandable-image">
+            <div class="amenity-caption">Senior Citizen Sit-Out</div>
+          </div>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+    <!-- 9. Project Gallery -->
+  <section class="gallery-section section-padding" id="gallery">
+    <div class="container reveal-3d">
+      <h2 class="section-title">Project Gallery</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track">
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/building gallery image .png" alt="Building Gallery Image" loading="lazy" class="expandable-image">
+          </div>
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/building lobby gallery.jpeg" alt="Building Lobby" loading="lazy" class="expandable-image">
+          </div>
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/balcony view gallery.jpeg" alt="Balcony View" loading="lazy" class="expandable-image">
+          </div>
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/living room gallery.jpeg" alt="Living Room" loading="lazy" class="expandable-image">
+          </div>
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/horizontal building image.jpeg" alt="Horizontal Building 1" loading="lazy" class="expandable-image">
+          </div>
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/horizontal building image 2.jpeg" alt="Horizontal Building 2" loading="lazy" class="expandable-image">
+          </div>
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/vertical building image.jpeg" alt="Vertical Building 1" loading="lazy" class="expandable-image">
+          </div>
+          <div class="carousel-slide gallery-slide">
+            <img src="./assets/vertical building image 2.jpeg" alt="Vertical Building 2" loading="lazy" class="expandable-image">
+          </div>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Location Advantage -->
+  <section class="location-section section-padding" id="location">
+    <div class="container">
+      <h2 class="section-title reveal-3d">Location Advantage</h2>
+      <div class="location-grid reveal-3d">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="location-details">
+          <p style="font-weight: 600; font-size: 1.2rem; margin-bottom: 20px;">Plot No. 63, Sector 34A, Near Amandoot Metro Station, Kharghar, Navi Mumbai</p>
+          <ul class="connectivity-list">
+            <li>🚇 100m Walkable from Amandoot Metro Station</li>
+            <li>🏥 500m Sai Sanjivani Hospital</li>
+            <li>🏥 1 km Tata Hospital</li>
+            <li>🛍️ 2 km D-Mart & Markets</li>
+            <li>🎓 Schools, Colleges & Banks within 1 km Radius</li>
+            <li>✈️ 15 mins to Upcoming Navi Mumbai International Airport</li>
+            <li>🌉 30 mins to MTHL Atal Setu</li>
+            <li>🚆 7 mins to Kharghar Railway Station</li>
+            <li>🌳 5 mins to Central Park</li>
+            <li>🛣️ 2.5 km from NH-4</li>
+            <li>🚗 5 mins to Kharghar-Turbe Tunnel</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Second Schedule a Site Visit form -->
+  <section class="section-padding" style="background: var(--bg-color);">
+    <div class="container reveal-3d" style="max-width: 600px; text-align: center;">
+      <h2 class="section-title">Schedule a Site Visit</h2>
+      <form class="enquiry-form" style="background: var(--white); padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+        <input type="hidden" name="hp_field" value="">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <button type="submit" class="btn-cta" style="width: 100%;">Book Visit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. About Developer -->
+  <section class="section-padding" style="background: var(--white);">
+    <div class="container reveal-3d" style="max-width: 800px; text-align: center;">
+      <h2 class="section-title">About Developer</h2>
+      <p style="font-size: 1.1rem; color: #555;">With a legacy of excellence, the developer behind Satyam Surya Manhattan is committed to delivering quality and timely possession. Known for architectural innovation and customer-centric designs, our projects consistently elevate cityscapes while offering premium living experiences. We believe in creating not just homes, but enduring landmarks that stand the test of time.</p>
+    </div>
+  </section>
+
+  <!-- 13. Sticky Enquire Now Side Panel -->
+  <button class="btn-cta floating-enquire open-enquiry-modal">Enquire Now</button>
+
+  <!-- 14. Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img src="./assets/logo.png" alt="Logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'40\'><rect width=\'120\' height=\'40\' fill=\'%23555\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\'>LOGO</text></svg>'">
+          </div>
+          <p>Plot No. 63, Sector 34A, Kharghar, Navi Mumbai – 410210</p>
+          <p>Email: info@satyamsuryamanhattan.com</p>
+          <p>Phone: +91 98765 43210</p>
+        </div>
+        <div class="footer-col" style="text-align: center;">
+          <h4 style="color: white; margin-bottom: 15px;">MahaRERA Reg. No.</h4>
+          <div style="font-size: 1.2rem; font-weight: bold; color: var(--clr-s); margin-bottom: 10px;">P52000079306</div>
+          <a href="https://maharera.mahaonline.gov.in" target="_blank" style="text-decoration: underline;">maharera.mahaonline.gov.in</a>
+        </div>
+        <div class="footer-col" style="text-align: right;">
+          <h4 style="color: white; margin-bottom: 15px;">Scan to chat on WhatsApp</h4>
+          <img src="./assets/qr-code.png" alt="WhatsApp QR" class="qr-code" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\'><rect width=\'120\' height=\'120\' fill=\'white\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'black\'>QR Code</text></svg>'" style="margin-left: auto;">
+        </div>
+      </div>
+      
+      <div class="footer-legal">
+        <p>Disclaimer: The information provided on this website is for informational purposes only. This is not an official website of MahaRERA. The developer is RERA-authorized. Pricing, availability, and specifications are subject to change. Images are representational only. By submitting your details, you authorize us to send updates. <a href="privacy-policy.html">Privacy Policy</a></p>
+        <p>&copy; 2026 Satyam Surya Manhattan. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 15. Floating WhatsApp -->
+  <a href="https://wa.me/919876543210" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c.003-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.005-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+    </svg>
+  </a>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="Full Screen Image">
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+
+

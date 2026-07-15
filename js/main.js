@@ -41,55 +41,70 @@ function initLoader() {
 // ==========================================
 function initSliders() {
     if (typeof Glide !== 'undefined') {
+        const glides = [];
+        
+        function getPerView(def) {
+            return window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : def;
+        }
+
         const mainSliderEl = document.getElementById("mainSlider");
         if (mainSliderEl) {
-            new Glide(mainSliderEl, {
+            glides.push(new Glide(mainSliderEl, {
                 type: "carousel",
-                autoplay: 3000,
                 autoplay: 3000,
                 hoverpause: false,
                 animationDuration: 1000,
                 gap: 0
-            }).mount();
+            }).mount());
         }
 
-                const planSliderEl = document.getElementById("plan-slider");
+        const planSliderEl = document.getElementById("plan-slider");
         if (planSliderEl) {
-            new Glide(planSliderEl, {
-                type: "carousel",
-                autoplay: 3000,
-                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 2, gap: 20
-            }).mount();
+            const g = new Glide(planSliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(2)
+            });
+            g.mount();
+            glides.push({ instance: g, def: 2 });
         }
 
         const priceSliderEl = document.getElementById("price-slider");
         if (priceSliderEl) {
-            new Glide(priceSliderEl, {
-                type: "carousel",
-                autoplay: 3000,
-                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 3, gap: 20
-            }).mount();
+            const g = new Glide(priceSliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(3)
+            });
+            g.mount();
+            glides.push({ instance: g, def: 3 });
         }
 
         const gallerySliderEl = document.getElementById("gallery-galSider");
         if (gallerySliderEl) {
-            new Glide(gallerySliderEl, {
-                type: "carousel",
-                autoplay: 3000,
-                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 3, gap: 20
-            }).mount();
+            const g = new Glide(gallerySliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(3)
+            });
+            g.mount();
+            glides.push({ instance: g, def: 3 });
         }
 
         const amenitiesSliderEl = document.querySelector(".amenities-slider");
         if (amenitiesSliderEl) {
-            new Glide(amenitiesSliderEl, {
-                type: "carousel",
-                autoplay: 3000,
-                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 4, gap: 20
-            }).mount();
+            const g = new Glide(amenitiesSliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(4)
+            });
+            g.mount();
+            glides.push({ instance: g, def: 4 });
         }
+        
+        window.addEventListener('resize', () => {
+            glides.forEach(item => {
+                if(item.instance) {
+                    item.instance.update({ perView: getPerView(item.def) });
+                }
+            });
+        });
     }
 }
+
+
 
 // ==========================================
 // SCROLL-DRIVEN 3D PARALLAX
@@ -242,5 +257,6 @@ document.addEventListener('show.bs.modal', function (event) {
         modalTitleEl.innerHTML = modalTitle;
     }
 });
+
 
 

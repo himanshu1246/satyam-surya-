@@ -992,13 +992,12 @@ footer {
 }
 /* Footer - E */
 
-/* Sidebar - S */
-sidebar {
+/* .sidebar - S */
+.sidebar {
   
   background-color: #ffffff;
 }
-@media screen and (min-width: 800px) {
-  sidebar {
+@media screen and (min-width: 800px) { .sidebar {
     position: sticky;
     top: 0;
     z-index: 2;
@@ -1057,7 +1056,7 @@ sidebar {
   background-color: var(--clr-p);
   color: var(--clr-t);
 }
-sidebar .section-heading {
+.sidebar .section-heading {
   font-size: 18px;
   text-transform: uppercase;
   display: block;
@@ -1065,14 +1064,13 @@ sidebar .section-heading {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-@media screen and (min-width: 1150px) and (max-width: 1950px) {
-  sidebar .section-heading {
+@media screen and (min-width: 1150px) and (max-width: 1950px) { .sidebar .section-heading {
     font-size: calc(1.3vw + 1px);
     margin-top: calc(1.5vw + 1px);
     margin-bottom: calc(0.5vw + 1px);
   }
 }
-/* Sidebar - E */
+/* .sidebar - E */
 
 /* Form - S */
 .enq-form {
@@ -1097,7 +1095,7 @@ sidebar .section-heading {
   margin-top: 10px;
 }
 
-sidebar .enq-form,
+.sidebar .enq-form,
 .enqPopup .enq-form {
   gap: 8px;
   padding: 10px;
@@ -1120,29 +1118,24 @@ sidebar .enq-form,
   }
   .enq-form .btn-wrapper {
     margin-top: calc(1vw + 1px);
-  }
-
-  sidebar .enq-form {
+  } .sidebar .enq-form {
     gap: calc(0.5vw + 1px);
     padding: calc(1vw + 1px);
   }
   .enqPopup .enq-form {
     gap: calc(1vw + 1px);
     padding: calc(1vw + 1px);
-  }
-  sidebar .enq-form .form-control {
+  } .sidebar .enq-form .form-control {
     font-size: calc(0.85vw + 1px);
     padding: calc(0.3vw + 1px) calc(0.75vw + 1px);
   }
   .enqPopup .enq-form .form-control {
     font-size: calc(0.85vw + 1px);
     padding: calc(0.5vw + 1px) calc(0.85vw + 1px);
-  }
-  sidebar .enq-form .consent .form-check-label,
+  } .sidebar .enq-form .consent .form-check-label,
   .enqPopup .enq-form .consent .form-check-label {
     font-size: calc(0.5vw + 1px);
-  }
-  sidebar .enq-form .btn-wrapper {
+  } .sidebar .enq-form .btn-wrapper {
     margin-top: calc(0.3vw + 1px);
   }
   .EnqPopup .enq-form .btn-wrapper {
@@ -1728,8 +1721,7 @@ sidebar .enq-form,
     font-size: 30px;
     width: 45px;
     height: 45px;
-  }
-  sidebar .section-heading {
+  } .sidebar .section-heading {
     font-size: 24px;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -1747,28 +1739,24 @@ sidebar .enq-form,
   }
   .enq-form .btn-wrapper {
     margin-top: 6px;
-  }
-  sidebar .enq-form {
+  } .sidebar .enq-form {
     gap: 10px;
     padding: 20px;
   }
   .enqPopup .enq-form {
     gap: 20px;
     padding: 20px;
-  }
-  sidebar .enq-form .form-control {
+  } .sidebar .enq-form .form-control {
     font-size: 17px;
     padding: 6px 15px;
   }
   .enqPopup .enq-form .form-control {
     font-size: 17px;
     padding: 10px 16px;
-  }
-  sidebar .enq-form .consent .form-check-label,
+  } .sidebar .enq-form .consent .form-check-label,
   .enqPopup .enq-form .consent .form-check-label {
     font-size: 10px;
-  }
-  sidebar .enq-form .btn-wrapper {
+  } .sidebar .enq-form .btn-wrapper {
     margin-top: 6px;
   }
   .enq-popup-cp-highlights {
@@ -1810,8 +1798,7 @@ sidebar .enq-form,
   .lp-layout {
     grid-template-columns: calc(100% - 400px) 400px;
     
-  }
-  sidebar {
+  } .sidebar {
     height: 100dvh;
   }
 
@@ -2024,5 +2011,6 @@ sidebar .enq-form,
 .unlocked .locked-overlay {
     display: none;
 }
+
 
 

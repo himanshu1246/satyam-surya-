@@ -58,9 +58,7 @@ function initSliders() {
             new Glide(planSliderEl, {
                 type: "carousel",
                 autoplay: 3000,
-                perView: 2,
-                gap: 20,
-                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
+                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 2, gap: 20
             }).mount();
         }
 
@@ -69,9 +67,7 @@ function initSliders() {
             new Glide(priceSliderEl, {
                 type: "carousel",
                 autoplay: 3000,
-                perView: 3,
-                gap: 20,
-                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
+                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 3, gap: 20
             }).mount();
         }
 
@@ -80,9 +76,7 @@ function initSliders() {
             new Glide(gallerySliderEl, {
                 type: "carousel",
                 autoplay: 3000,
-                perView: 3,
-                gap: 20,
-                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
+                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 3, gap: 20
             }).mount();
         }
 
@@ -91,9 +85,7 @@ function initSliders() {
             new Glide(amenitiesSliderEl, {
                 type: "carousel",
                 autoplay: 3000,
-                perView: 4,
-                gap: 20,
-                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
+                perView: window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : 4, gap: 20
             }).mount();
         }
     }
@@ -250,4 +242,5 @@ document.addEventListener('show.bs.modal', function (event) {
         modalTitleEl.innerHTML = modalTitle;
     }
 });
+
 

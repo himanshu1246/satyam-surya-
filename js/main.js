@@ -15,6 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Hero Slider Logic
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  let currentSlide = 0;
+  if (heroSlides.length > 0) {
+    setInterval(() => {
+      heroSlides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % heroSlides.length;
+      heroSlides[currentSlide].classList.add('active');
+    }, 4000);
+  }
+
   // Smooth Scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -76,15 +87,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxClose = document.querySelector('.lightbox-close');
+  const lightboxPrev = document.querySelector('.lightbox-nav.prev');
+  const lightboxNext = document.querySelector('.lightbox-nav.next');
+  let currentLightboxImages = [];
+  let currentLightboxIndex = 0;
 
   if (lightbox) {
+    const showImage = (index) => {
+      if (index < 0) index = currentLightboxImages.length - 1;
+      if (index >= currentLightboxImages.length) index = 0;
+      currentLightboxIndex = index;
+      const img = currentLightboxImages[index];
+      const src = img.getAttribute('data-fullsrc') || img.getAttribute('src');
+      lightboxImg.setAttribute('src', src);
+    };
+
     document.querySelectorAll('.expandable-image, .gallery-item img, .amenity-card img').forEach(img => {
       img.addEventListener('click', () => {
-        const src = img.getAttribute('data-fullsrc') || img.getAttribute('src');
-        lightboxImg.setAttribute('src', src);
+        const section = img.closest('section');
+        if (section) {
+           currentLightboxImages = Array.from(section.querySelectorAll('.expandable-image, .gallery-item img, .amenity-card img'));
+        } else {
+           currentLightboxImages = [img];
+        }
+        currentLightboxIndex = currentLightboxImages.indexOf(img);
+        showImage(currentLightboxIndex);
         lightbox.classList.add('active');
       });
     });
+
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentLightboxIndex - 1);
+      });
+    }
+    if (lightboxNext) {
+      lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentLightboxIndex + 1);
+      });
+    }
 
     lightboxClose.addEventListener('click', () => {
       lightbox.classList.remove('active');
@@ -126,6 +169,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // Form Submission Logic
   const forms = document.querySelectorAll('form');
   
+  // OTP Flow Logic
+  document.querySelectorAll('.btn-next-otp').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const form = e.target.closest('form');
+      const name = form.querySelector('input[name="name"]');
+      const phone = form.querySelector('input[name="phone"]');
+      if (name && phone && (!name.value || phone.value.length < 10)) {
+        alert("Please enter a valid name and phone number before requesting OTP.");
+        return;
+      }
+      const formFields = form.querySelector('.form-fields');
+      const otpFields = form.querySelector('.otp-fields');
+      if (formFields && otpFields) {
+        formFields.style.display = 'none';
+        otpFields.style.display = 'block';
+        alert("A demo OTP has been sent to your phone number.");
+      }
+    });
+  });
+
   forms.forEach(form => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -163,12 +226,20 @@ document.addEventListener("DOMContentLoaded", () => {
           
           alert("Thank you for your enquiry. We will get back to you soon!");
           form.reset();
+          const formFields = form.querySelector('.form-fields');
+          const otpFields = form.querySelector('.otp-fields');
+          if (formFields) formFields.style.display = 'block';
+          if (otpFields) otpFields.style.display = 'none';
           if (modalOverlay) modalOverlay.classList.remove('active');
         } else {
           // Dummy behavior when endpoint is not configured
           setTimeout(() => {
             alert("Form endpoint not configured. Data not sent.");
             form.reset();
+            const formFields = form.querySelector('.form-fields');
+            const otpFields = form.querySelector('.otp-fields');
+            if (formFields) formFields.style.display = 'block';
+            if (otpFields) otpFields.style.display = 'none';
             if (modalOverlay) modalOverlay.classList.remove('active');
           }, 1000);
         }

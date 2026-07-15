@@ -60,9 +60,7 @@ function initSliders() {
                 autoplay: 3000,
                 perView: 2,
                 gap: 20,
-                breakpoints: {
-                    768: { perView: 1 }
-                }
+                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
             }).mount();
         }
 
@@ -73,10 +71,7 @@ function initSliders() {
                 autoplay: 3000,
                 perView: 3,
                 gap: 20,
-                breakpoints: {
-                    1024: { perView: 2 },
-                    768: { perView: 1 }
-                }
+                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
             }).mount();
         }
 
@@ -87,10 +82,7 @@ function initSliders() {
                 autoplay: 3000,
                 perView: 3,
                 gap: 20,
-                breakpoints: {
-                    1024: { perView: 2 },
-                    768: { perView: 1 }
-                }
+                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
             }).mount();
         }
 
@@ -101,11 +93,7 @@ function initSliders() {
                 autoplay: 3000,
                 perView: 4,
                 gap: 20,
-                breakpoints: {
-                    1024: { perView: 3 },
-                    768: { perView: 2 },
-                    500: { perView: 1 }
-                }
+                breakpoints: { 1024: { perView: 2 }, 800: { perView: 1 } }
             }).mount();
         }
     }
@@ -262,3 +250,4 @@ document.addEventListener('show.bs.modal', function (event) {
         modalTitleEl.innerHTML = modalTitle;
     }
 });
+

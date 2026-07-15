@@ -1,29 +1,28 @@
-# Satyam Surya Manhattan Landing Page
+# Satyam Surya Manhattan - Landing Page
+
+A real-estate landing page built with HTML, CSS, and JS. 
 
 ## Deployment Instructions
 
-### Vercel (Preview)
+### Vercel
 1. Push this repository to GitHub.
-2. Import the repository in Vercel.
-3. It will automatically detect it as a static site. No build command is required.
-4. Security headers are automatically applied via `vercel.json`.
+2. Connect your GitHub repository to Vercel.
+3. Vercel will automatically detect the static site and deploy it using the `vercel.json` headers for security.
 
-### Hostinger / Apache (Live)
-1. Upload the contents of this directory to your Hostinger `public_html` directory via File Manager or FTP.
-2. For security headers on Hostinger, create a `.htaccess` file in the root with the following:
+### Hostinger
+1. Upload all files (excluding `.git` and `.env.example`) to your `public_html` directory via cPanel File Manager or FTP.
+2. Ensure you have the `.htaccess` rules equivalent to the `vercel.json` headers to maintain security headers.
+Example `.htaccess`:
 ```apache
 <IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:;"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://script.google.com; frame-src 'self' https://www.google.com;"
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 ```
 
-## Configuration (Before Going Live)
-Before deploying to production, open `js/main.js` and update the constants at the top:
-- `FORM_ENDPOINT`: Your Google Apps Script Web App URL.
-- `WHATSAPP_NUMBER`: The WhatsApp number for click-to-chat.
-- `CONTACT_PHONE`: The phone number for click-to-call links.
+## Configuration
+Edit `js/main.js` and update `FORM_ENDPOINT` with your Google Apps Script URL.
+Update `WHATSAPP_NUMBER` wherever necessary if changed from default.
 
-Also, ensure you have placed all source images into their respective folders inside `assets/`.

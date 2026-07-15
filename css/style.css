@@ -1900,3 +1900,138 @@ sidebar .enq-form,
   border: 1px solid var(--clr-t);
 }
 /* Translator Style - End ====== */
+
+/* Scroll-Driven Parallax Motion */
+.parallax-element {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease-out;
+    transform: translateY(40px) scale(0.98);
+    opacity: 0;
+}
+.parallax-visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+
+/* UI/UX Polish */
+body, html {
+    overflow-x: hidden;
+}
+.custom-arrow {
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+.custom-arrow-left {
+    left: -20px;
+}
+.custom-arrow-right {
+    right: -20px;
+}
+.custom-arrow:hover {
+    background-color: var(--clr-p) !important;
+}
+
+/* Mobile specific fixes */
+@media screen and (max-width: 800px) {
+    .custom-arrow-left {
+        left: -10px; /* Bring closer inside on mobile */
+    }
+    .custom-arrow-right {
+        right: -10px; /* Bring closer inside on mobile */
+    }
+    .info-box {
+        margin: -40px 15px 20px !important;
+        position: relative !important;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+        z-index: 5;
+    }
+    .info-box .mb-box {
+        border-radius: 15px 15px 0 0 !important;
+        border: none !important;
+    }
+    .section-heading {
+        font-size: 24px !important;
+    }
+    .parallax-element {
+        transform: translateY(20px) scale(0.98);
+    }
+    .sidebar {
+        margin-top: -15px;
+        border-radius: 15px;
+        position: relative;
+        z-index: 2;
+    }
+    section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+/* Fix Link Colors in Sliders */
+.glide__slide a {
+    text-decoration: none;
+    color: #333;
+}
+.glide__slide a:hover {
+    color: var(--clr-p);
+}
+
+/* Fix Pricing Buttons Overflow */
+.price-block {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px !important;
+}
+.price-block button {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-top: 10px;
+    padding-bottom: 5px !important;
+    width: 90% !important;
+}
+
+/* Blur and Lock Functionality for Plans */
+.locked-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.locked-content {
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+    transition: filter 0.3s ease;
+}
+.locked-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 15px;
+}
+.unlocked .locked-content {
+    filter: blur(0);
+    pointer-events: auto;
+    user-select: auto;
+}
+.unlocked .locked-overlay {
+    display: none;
+}

@@ -32,10 +32,20 @@ window.addEventListener("load", (event) => {
 			var enableAutoPopupOnMobile = true;
 			var isMobile = window.innerWidth <= 768;
 			 if (enableAutoPopupOnMobile || !isMobile) {
-				setTimeout(() => {
-					var enqPopup = new bootstrap.Modal(document.getElementById('enqPopup'));
-					enqPopup.show();
-				}, 5000);
+                var popupElement = document.getElementById('enqPopup');
+                if (popupElement) {
+                    var enqPopup = new bootstrap.Modal(popupElement);
+                    setInterval(() => {
+                        if (sessionStorage.getItem('hasEnquired') !== 'true' && !popupElement.classList.contains('show')) {
+                            enqPopup.show();
+                        }
+                    }, 10000);
+                    setTimeout(() => {
+                        if (sessionStorage.getItem('hasEnquired') !== 'true' && !popupElement.classList.contains('show')) {
+                            enqPopup.show();
+                        }
+                    }, 5000);
+                }
 			}
 		});
 

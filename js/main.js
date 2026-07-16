@@ -2,7 +2,7 @@
 // CONFIGURATION
 // ==========================================
 // IMPORTANT: Update this with your Google Apps Script Web App URL
-const FORM_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxUGw5s2dJTadPo6dJ_bGMjrXbqlosKIBrEeg7eMGUjZ1OrXzChTxGm4rDsWps2ac1W9Q/exec";
 
 // ==========================================
 // INITIALIZATION
@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
     initSmoothScroll();
     if (typeof GLightbox !== 'undefined') {
         GLightbox({ selector: '.glightbox' });
+    }
+    
+    // Check if floor plans were unlocked in this session
+    if (sessionStorage.getItem('floorPlanUnlocked') === 'true') {
+        const planLock = document.getElementById('planLockedWrapper');
+        if (planLock) {
+            planLock.classList.add('unlocked');
+        }
     }
 });
 
@@ -41,66 +49,53 @@ function initLoader() {
 // ==========================================
 function initSliders() {
     if (typeof Glide !== 'undefined') {
-        const glides = [];
-        
-        function getPerView(def) {
-            return window.innerWidth <= 800 ? 1 : window.innerWidth <= 1024 ? 2 : def;
-        }
+        const breakpointsConfig = {
+            1024: { perView: 2 },
+            800: { perView: 1, peek: 0, focusAt: 0, gap: 10 }
+        };
 
         const mainSliderEl = document.getElementById("mainSlider");
         if (mainSliderEl) {
-            glides.push(new Glide(mainSliderEl, {
+            new Glide(mainSliderEl, {
                 type: "carousel",
                 autoplay: 3000,
                 hoverpause: false,
                 animationDuration: 1000,
                 gap: 0
-            }).mount());
+            }).mount();
         }
 
         const planSliderEl = document.getElementById("plan-slider");
         if (planSliderEl) {
-            const g = new Glide(planSliderEl, {
-                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(2)
-            });
-            g.mount();
-            glides.push({ instance: g, def: 2 });
+            new Glide(planSliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: 2, 
+                breakpoints: { 800: { perView: 1, peek: 0, focusAt: 0, gap: 10 } }
+            }).mount();
         }
 
         const priceSliderEl = document.getElementById("price-slider");
         if (priceSliderEl) {
-            const g = new Glide(priceSliderEl, {
-                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(3)
-            });
-            g.mount();
-            glides.push({ instance: g, def: 3 });
+            new Glide(priceSliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: 3, 
+                breakpoints: breakpointsConfig
+            }).mount();
         }
 
         const gallerySliderEl = document.getElementById("gallery-galSider");
         if (gallerySliderEl) {
-            const g = new Glide(gallerySliderEl, {
-                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(3)
-            });
-            g.mount();
-            glides.push({ instance: g, def: 3 });
+            new Glide(gallerySliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: 3, 
+                breakpoints: breakpointsConfig
+            }).mount();
         }
 
         const amenitiesSliderEl = document.querySelector(".amenities-slider");
         if (amenitiesSliderEl) {
-            const g = new Glide(amenitiesSliderEl, {
-                type: "carousel", autoplay: 3000, gap: 20, perView: getPerView(4)
-            });
-            g.mount();
-            glides.push({ instance: g, def: 4 });
+            new Glide(amenitiesSliderEl, {
+                type: "carousel", autoplay: 3000, gap: 20, perView: 4, 
+                breakpoints: breakpointsConfig
+            }).mount();
         }
-        
-        window.addEventListener('resize', () => {
-            glides.forEach(item => {
-                if(item.instance) {
-                    item.instance.update({ perView: getPerView(item.def) });
-                }
-            });
-        });
     }
 }
 
@@ -163,37 +158,38 @@ function initFormHandling() {
             const formData = new FormData(form);
             
             // Client side validation can be bypassed, server must validate too
+            // Client side validation can be bypassed, server must validate too
             fetch(FORM_ENDPOINT, {
                 method: "POST",
                 body: formData,
-                mode: "no-cors" // no-cors hides response details but successfully posts
-            })
-            .then(() => {
-                alert("Thank you! Your inquiry has been submitted."); if(form.querySelector('input[name="form_name"]').value.includes("Brochure")) { window.open("./assets/SATYAM%20SURYA%20MANHATTAN%20brochure.pdf", "_blank"); }
-                form.reset();
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-                
-                            // Unlock plans on successful form submit
+                mode: "no-cors", // no-cors hides response details but successfully posts
+                keepalive: true  // ensures request completes even if page redirects
+            });
+            
+            // Execute immediately for instant user experience
+            const formNameVal = form.querySelector('input[name="form_name"]').value;
+            if(formNameVal.includes("Brochure")) { window.open("./assets/SATYAM%20SURYA%20MANHATTAN%20brochure.pdf", "_blank"); }
+            if(formNameVal.includes("Unlock Plans")) { sessionStorage.setItem('floorPlanUnlocked', 'true'); }
+            
+            sessionStorage.setItem('hasEnquired', 'true');
+            window.location.href = "./thank-you.html";
+            form.reset();
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+            
+            // Unlock plans on successful form submit immediately (in case they don't redirect instantly)
             const planLock = document.getElementById('planLockedWrapper');
             if (planLock) {
                 planLock.classList.add('unlocked');
             }
-                // Hide modal if form was inside one
-                const modalEl = form.closest('.modal');
-                if (modalEl) {
-                    const modalInstance = bootstrap.Modal.getInstance(modalEl);
-                    if (modalInstance) {
-                        modalInstance.hide();
-                    }
+            // Hide modal if form was inside one
+            const modalEl = form.closest('.modal');
+            if (modalEl) {
+                const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                if (modalInstance) {
+                    modalInstance.hide();
                 }
-            })
-            .catch(error => {
-                console.error("Error submitting form", error);
-                alert("There was an error. Please try again or call us directly.");
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-            });
+            }
         });
 
         // Ensure button is enabled when checkbox is checked

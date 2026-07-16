@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="./assets/new logo.png" />
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Thank You | Satyam Surya Manhattan</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="./css/style.css?v=639197380612251091" rel="stylesheet"/>
+    
+    <style>
+        :root{
+            --clr-p: #AE902F;
+            --clr-s: #493c12;
+            --clr-t: #ffffff;
+            --ff-base:"Inter",sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            font-family: var(--ff-base);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-navbar .logo {
+            max-width: 250px;
+            height: 60px;
+            object-fit: contain;
+        }
+        .thank-you-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .thank-you-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+            max-width: 600px;
+            width: 100%;
+        }
+        .thank-you-box i {
+            font-size: 60px;
+            color: #28a745;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .thank-you-box h1 {
+            font-weight: 700;
+            color: var(--clr-p);
+            margin-bottom: 15px;
+        }
+        .btn-cta {
+            background-color: var(--clr-p);
+            color: var(--clr-t);
+            font-weight: 600;
+            padding: 10px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border: none;
+        }
+        .btn-cta:hover {
+            background-color: var(--clr-s);
+            color: var(--clr-t);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav class="navbar bg-white shadow main-navbar sticky-top">
+        <div class="container-fluid justify-content-center">
+            <a class="navbar-brand" href="./index.html">
+                <img alt="Satyam Surya Manhattan Logo" class="logo" src="./assets/new logo.png" onerror="this.src='https://placehold.co/250x60?text=Logo'"/>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="thank-you-section">
+        <div class="thank-you-box">
+            <i class="ri-checkbox-circle-fill"></i>
+            <h1>Thank You!</h1>
+            <p class="mb-4">Your inquiry has been successfully submitted. We appreciate your interest in Satyam Surya Manhattan.</p>
+            <p class="text-muted small">One of our executives will get in touch with you shortly to assist you further.</p>
+            <a href="./index.html" class="btn btn-cta">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-4 text-center mt-auto border-top">
+        <div class="container">
+            <img alt="Satyam Surya Manhattan Logo" class="mb-3" src="./assets/new logo.png" onerror="this.src='https://placehold.co/200x50?text=Logo'" height="50"/>
+            <p class="small text-muted mb-4 px-md-5 text-start">Disclaimer : The information provided on this website is intended exclusively for informational purposes and should not be construed as an offer of services. This site is managed by a RERA authorized real estate developer. The pricing information presented on this website is subject to alteration without advance notification, and the assurance of property availability cannot be guaranteed. The images showcased on this website are for representational purposes only and may not accurately reflect the actual properties. Additionally, we may send updates and information to the mobile number or email address registered with us. All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Any unauthorized use or reproduction of the content may violate applicable laws. This is not an official website of MahaRERA. For accurate and up-to-date information, it is recommended to contact us directly. Thank you for visiting.</p>
+            <div>
+                <a href="./privacy-policy.html" class="text-dark small me-3">Privacy Policy</a> | <a href="./terms-conditions.html" class="text-dark small me-3">Terms &amp; Conditions</a>
+                <span class="small text-muted">© 2026 Developer. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

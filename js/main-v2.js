@@ -50,7 +50,8 @@ function initLoader() {
 function initSliders() {
     if (typeof Glide !== 'undefined') {
         const breakpointsConfig = {
-            1024: { perView: 2 },
+            1200: { perView: 2 },
+            992: { perView: 1, peek: 0, focusAt: 0, gap: 10 },
             800: { perView: 1, peek: 0, focusAt: 0, gap: 10 }
         };
 
@@ -69,7 +70,7 @@ function initSliders() {
         if (planSliderEl) {
             new Glide(planSliderEl, {
                 type: "carousel", autoplay: 3000, gap: 20, perView: 2, 
-                breakpoints: { 800: { perView: 1, peek: 0, focusAt: 0, gap: 10 } }
+                breakpoints: { 992: { perView: 1, peek: 0, focusAt: 0, gap: 10 }, 800: { perView: 1, peek: 0, focusAt: 0, gap: 10 } }
             }).mount();
         }
 

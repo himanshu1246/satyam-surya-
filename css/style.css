@@ -2014,3 +2014,19 @@ footer {
 
 
 
+
+ / *   F O R C E   1   I T E M   P E R   V I E W   O N   M O B I L E   C A R O U S E L S   * / 
+ @ m e d i a   ( m a x - w i d t h :   8 0 0 p x )   { 
+         . g l i d e _ _ s l i d e : n o t ( . g l i d e _ _ s l i d e - - a c t i v e )   { 
+                 o p a c i t y :   0   ! i m p o r t a n t ; 
+                 p o i n t e r - e v e n t s :   n o n e ; 
+                 v i s i b i l i t y :   h i d d e n ; 
+         } 
+         . g l i d e _ _ s l i d e . g l i d e _ _ s l i d e - - a c t i v e   { 
+                 o p a c i t y :   1   ! i m p o r t a n t ; 
+                 v i s i b i l i t y :   v i s i b l e ; 
+                 w i d t h :   1 0 0 %   ! i m p o r t a n t ;   / *   F o r c e   f u l l   w i d t h   t o   p r e v e n t   p e e k i n g   * / 
+         } 
+ } 
+  
+ 
